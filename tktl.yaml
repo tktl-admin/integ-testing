@@ -9,12 +9,13 @@ service:
   # Replicas are exact copies of your service, each request will be randomly directed to each of them
   replicas: 2
 
-  # Can be gpu or cpu
-  compute_type: cpu
+  # Format: <instance_kind>.<instance_size>
+  # Only 'gp' (general purpose) instance_kind is supported for now
+  # instance_size can be: small, medium, large
+  instance_type: gp.small
 
   # Can be rest or grpc
   service_type: rest
-
 
 # Assets: model and data
 # Assets are the artifacts that comprise model and data.  These will be loaded inside the container
