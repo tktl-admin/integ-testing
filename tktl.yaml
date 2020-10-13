@@ -7,7 +7,7 @@ service:
 
   # The number of replicas of your service
   # Replicas are exact copies of your service, each request will be randomly directed to each of them
-  replicas: 2
+  replicas: 1
 
   # Format: <instance_kind>.<instance_size>
   # Only 'gp' (general purpose) instance_kind is supported for now
@@ -47,4 +47,4 @@ data:
   path: assets/data.pkl
   version: 1
 
-version: 0.1.15
+version: 0.1.19

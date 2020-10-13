@@ -1,22 +1,23 @@
 import joblib
 import pandas as pd
+
 from tktl import Tktl
 
-# Instantiate Taktile client
+# instantiate client
 tktl = Tktl()
 
-# Load reference data
-data_test = pd.read_parquet("assets/test.pqt")
-label = "survived"
-X_test = data_test.drop(columns=label)
-y_test = data_test[label]
+# load model
+model = joblib.load("assets/model.joblib")
 
-# Load model
-model = joblib.load("assets/model.pkl")
+# load reference data
+data = pd.read_parquet("assets/loans_test.pqt")
+label = "Repaid"
+X = data.drop(columns=label)
+y = data[label]
 
 
-# Define predict functions
-@tktl.endpoint(kind="binary", X=X_test, y=y_test)
-def binary(X):
-    pred = model.predict_proba(X)[:, 1]
+# specify transformation
+@tktl.endpoint(kind="binary", X=X, y=y)
+def repayment(df):
+    pred = model.predict_proba(df)[:, 1]
     return pred

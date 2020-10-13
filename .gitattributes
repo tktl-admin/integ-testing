@@ -1,1 +1,5 @@
 assets/** filter=lfs diff=lfs merge=lfs -text
+assets/test.pqt filter=lfs diff=lfs merge=lfs -text
+assets/loans_test.pqt filter=lfs diff=lfs merge=lfs -text
+assets/model.joblib filter=lfs diff=lfs merge=lfs -text
+assets/model.pkl filter=lfs diff=lfs merge=lfs -text
