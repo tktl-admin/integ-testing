@@ -1,5 +1,4 @@
 # Taktile requirements
-taktile-cli==0.2.1
 numpy==1.18.*
 pandas==1.0.*
 pytest==5.4.*

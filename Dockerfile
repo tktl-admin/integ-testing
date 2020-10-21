@@ -1,4 +1,4 @@
-FROM taktile/base-serving-api-arrow:cfa7ccf5ce3df470dd75f355738540d11afffcc2
+FROM taktile/base-serving-api-arrow:6fdc8c793115a96280968f60e6dd562e0f800df4
 ENV APPDIR /app
 
 # Install requirements
