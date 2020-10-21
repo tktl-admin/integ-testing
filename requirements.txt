@@ -7,3 +7,5 @@ pytest-json-report==1.2.*
 # User requirements (add yours below)
 pyarrow==1.0.*
 scikit-learn==0.23.1
+taktile-cli==0.2.3
+taktile-profiling==0.2.1
