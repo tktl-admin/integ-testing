@@ -12,3 +12,5 @@ COPY ./tests ${APPDIR}/user_tests
 
 # Run model profile
 RUN python ${APPDIR}/profile_endpoints.py
+
+ENTRYPOINT bash /start-reload.sh
