@@ -1,4 +1,5 @@
 FROM taktile/base-serving-api-arrow:0.2.22
+
 ENV APPDIR /app
 
 # Install requirements
@@ -12,3 +13,5 @@ COPY ./tests ${APPDIR}/user_tests
 
 # Run model profile
 RUN python ${APPDIR}/profile_endpoints.py
+
+ENTRYPOINT bash /start-reload.sh
