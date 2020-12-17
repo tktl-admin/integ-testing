@@ -47,4 +47,4 @@ data:
   path: assets/data.pkl
   version: 1
 
-version: 0.3.10
+version: 0.3.12
