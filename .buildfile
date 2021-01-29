@@ -1,4 +1,4 @@
-FROM taktile/base-serving-api-arrow:0.3.12
+FROM taktile/base-serving-api-arrow:0.4.2
 
 ENV APPDIR /app
 
