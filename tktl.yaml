@@ -1,21 +1,28 @@
 
-
-# The default branch from which models will vbe deployed
-default_branch_name: master
+# If this option is set only commits with a commit message starting
+# by the deployment_prefix will be deployed
+# deployment_prefix: "#deploy"
 
 service:
-  # Format: <instance_kind>.<instance_size>
+
+  # For the `instance_type` format, use the following: <instance_kind>.<instance_size>
   # Only 'gp' (general purpose) instance_kind is supported for now
-  # instance_size can be: small, medium, large
+  # instance_size can be: small, medium, large, xlarge, or xxlarge.
+  # This is the instance type that will be used for both arrow and rest
+
+  # Rest deployment scaling parameters
   rest:
-    replicas: 1
+    instance_type: gp.small
+    # Maximum and minimum number of replicas to which the REST service is allowed to reach
+    # by the auto-scaler
     max_replicas: 1
-    instance_type: gp.small
-
-  arrow:
+    # Minimum, or starting number of replicas
     replicas: 1
+
+  # Arrow deployment scaling parameters
+  arrow:
     instance_type: gp.small
+    # Arrow # replicas are fixed and don't autoscale
+    replicas: 1
 
-
-
-version: 0.4.2
+version: 0.5.4

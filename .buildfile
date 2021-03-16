@@ -1,4 +1,4 @@
-FROM taktile/base-serving-api-arrow:0.4.2
+FROM taktile/base-serving-api-arrow:0.5.4 AS build_step
 
 ENV APPDIR /app
 
@@ -13,6 +13,10 @@ COPY ./src ${APPDIR}/src
 COPY ./assets ${APPDIR}/assets
 COPY ./tests ${APPDIR}/user_tests
 
+#
+# DO NOT EDIT ANYTHING BELOW THIS COMMENT
+#
+FROM build_step
 
 ARG RESOURCE_NAME
 ARG DEPLOYMENT_API_URL
