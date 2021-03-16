@@ -1,6 +1,6 @@
 # Taktile requirements
-taktile-cli==0.3.12
-numpy==1.18.*
+taktile-cli==0.5.4
+numpy<1.20
 pandas==1.0.*
 
 # User requirements (add yours below)
